@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { GET_BOOK_DATA } from './graphql/Queries';
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+} from '@apollo/client';
+
+import Book from './component/Book';
+
+
 
 function App() {
+
+  const client = new ApolloClient({
+    uri: 'https://fullstack-engineer-test-n4ouilzfna-uc.a.run.app/graphql',
+    cache: new InMemoryCache()
+
+  })
+
+  client.query({ query: GET_BOOK_DATA }).then((res) => console.log(res)).catch((error) => console.log('error:', error))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+
+
+        <Book />
+      </div>
+
+    </ApolloProvider>
   );
 }
 

@@ -1,0 +1,37 @@
+
+.buttonContainer {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.paragraph {
+    background: #fff;
+    width: 50%;
+    margin: 2rem 1rem;
+    padding: 1rem 2rem;
+    overflow: hidden;
+    box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25),
+        0 8px 16px -8px hsla(0, 0%, 0%, 0.3),
+        0 -6px 16px -6px hsla(0, 48%, 41%, 0.03);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+
+
+}
+
+
+.buttons {
+
+    padding: 1rem 2rem;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    /* margin: 1rem auto; */
+    background-color: rgb(30, 30, 184);
+    color: white;
+}
